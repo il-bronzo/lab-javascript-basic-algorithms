@@ -11,12 +11,17 @@ const navigator = "Sven";
 //const driverLeng
 
 if (driver.length > navigator.length) {
-    console.log(`The driver has the longest name, it has ${driver.length} characters.`);
+	console.log(
+		`The driver has the longest name, it has ${driver.length} characters.`
+	);
 } else if (driver.length < navigator.length) {
-    console.log(`It seems that the navigator has the longest name, it has ${navigator.length} characters.`);
+	console.log(
+		`It seems that the navigator has the longest name, it has ${navigator.length} characters.`
+	);
 } else if (driver.length === navigator.length) {
-    console.log(`Wow, you both have equally long names, ${driver.length} characters!`);
-    
+	console.log(
+		`Wow, you both have equally long names, ${driver.length} characters!`
+	);
 }
 
 // Iteration 3: Loops
@@ -28,31 +33,49 @@ for (character of driver) {
 console.log(nameUpper.toUpperCase());*/
 
 let upperName = "";
-for (let i=0; i<driver.length; i++) {
-    const upperLetter = driver[i].toUpperCase();
-    upperName += upperLetter + " ";
+for (let i = 0; i < driver.length; i++) {
+	const upperLetter = driver[i].toUpperCase();
+	upperName += upperLetter + " ";
 }
 console.log(upperName);
 
-
 let upperNameReversed = "";
-for (let i=navigator.length-1; i<navigator.length && i>=0; i--) {
-    const upperLetter = navigator[i].toUpperCase();
-    upperNameReversed += upperLetter + " ";
+for (let i = navigator.length - 1; i < navigator.length && i >= 0; i--) {
+	const upperLetter = navigator[i].toUpperCase();
+	upperNameReversed += upperLetter + " ";
 }
 console.log(upperNameReversed);
 
-const lexic_order= driver.localeCompare(navigator);
+const lexic_order = driver.localeCompare(navigator);
 switch (lexic_order) {
-    case -1:
-        console.log("The driver's name goes first.");
-        break;
-    case 1:
-    console.log("Yo, the navigator goes first, definitely.");
-        
-        break;
+	case -1:
+		console.log("The driver's name goes first.");
+		break;
+	case 1:
+		console.log("Yo, the navigator goes first, definitely.");
 
-    default:
-     console.log("What?! You both have the same name?")   
-        break;
+		break;
+
+	default:
+		console.log("What?! You both have the same name?");
+		break;
 }
+
+const longText = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sequi maiores quae, rerum similique ipsam reiciendis dolor neque enim, non labore vero at debitis? Porro in saepe ut unde vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sequi maiores quae, rerum similique ipsam reiciendis dolor neque enim, non labore vero at debitis? Porro in saepe ut unde vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sequi maiores quae, rerum similique ipsam reiciendis dolor neque enim, non labore vero at debitis? Porro in saepe ut unde vero.`;
+
+let countWords = 0;
+
+for (let i = 0; i < longText.length; i++) {
+	if (longText[i] === " ") {
+		countWords++;
+	}
+}
+
+console.log(countWords);
+
+// function WordCount(str) {
+// 	//return str.split(" ").length;
+//     return str.match(/(\w+)/g).length;
+// }
+
+// console.log(WordCount(longText));
