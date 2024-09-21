@@ -79,3 +79,53 @@ console.log(countWords);
 // }
 
 // console.log(WordCount(longText));
+
+
+const phraseToCheck = "stac,k cats";
+let phraseNoSpace= "";
+let phraseReversed = "";
+
+for (let i=0; i<phraseToCheck.length; i++) {
+
+    switch (phraseToCheck[i]) {
+        case " ":
+        case "!":
+        case ",":
+        case "?":
+            break;            
+    
+        default:
+            phraseNoSpace += phraseToCheck[i]
+            break;
+    }
+   /* if (phraseToCheck[i]!==" " || phraseToCheck[i]!=="," || phraseToCheck[i]!=="!" || phraseToCheck[i]!==".") { 
+    phraseNoSpace += phraseToCheck[i] }*/
+}
+
+
+for (let i=phraseToCheck.length-1; i>=0; i--) {
+    switch (phraseToCheck[i]) {
+        case " ":
+        case "!":
+        case ",":
+        case "?":
+            break;            
+    
+        default:
+            phraseReversed += phraseToCheck[i]
+            break;
+    }
+   /* if (phraseToCheck[i]!==" " || phraseToCheck[i]!=="," || phraseToCheck[i]!=="!" || phraseToCheck[i]!==".") { 
+    phraseReversed += phraseToCheck[i] }
+}*/
+ }
+
+console.log(phraseNoSpace);
+console.log(phraseReversed);
+
+if (phraseNoSpace.toLowerCase() === phraseReversed.toLowerCase()) {
+    console.log("You have found a palindrom!");
+}
+else {
+    console.log ("This expression is not a palindrom")
+}
